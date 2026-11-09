@@ -1,5 +1,27 @@
-# End-to-End Data Science Project Template
-## 📁 Repository Structure
+
+
+# CEFR Text Difficulty Analyzer
+
+## 📖 Project Overview
+The **CEFR Text Difficulty Analyzer** is a tool designed to automatically evaluate the reading difficulty of English texts based on the CEFR scale, ranging from A1 to C2. 
+
+Available as both an **application** and a **browser extension**, this project aims to help English language learners easily find reading materials perfectly tailored to their current proficiency level.
+
+### 🎯 Who is this for?
+This tool is created for **English language learners** who struggle to find appropriate articles, blogs, or books to read. It solves the frustrating experience of starting an article only to realize halfway through the first paragraph that the vocabulary is too advanced. By checking the text beforehand, learners can ensure the material matches their skills, keeping them motivated and making the learning process much smoother.
+
+### 🚀 Key Features (_note_: this section is still under development)
+* **Multiple Input Methods:** Users can paste plain text directly into the application, submit a URL for analysis, upload text file, or use the browser extension to instantly evaluate the text on their current webpage.
+* **Linguistic Analysis:** The algorithm evaluates the text based on:
+  * Vocabulary difficulty (word frequency and rarity)
+  * Grammatical complexity
+  * Average sentence length and structure
+* **Detailed Grading System:** The tool provides:
+  * An overall CEFR score for the text.
+  * A detailed percentage breakdown of the text's composition (e.g., *A1: 45%, A2: 30%, B1: 15%, B2: 10%*), giving users a granular look at what to expect before they start reading.
+ 
+# 📁 Repository Structure
+
 
 ```text
 ├── data/
@@ -16,46 +38,5 @@
 ├── requirements.txt       <- Python dependencies
 └── README.md
 ```
-# 🚀 Quickstart Guide
-## 1. Clone the Repository
-```Bash
-git clone https://github.com/Olat1337/e2e-data-science-template.git
-cd e2e-data-science-template
-```
-## 2. Set Up a Virtual Environment
-macOS / Linux:
-```Bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-Windows (PowerShell):
-```Bash
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
-(If PowerShell execution policy blocks the script, run Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass).
-## 3. Install Dependencies
-```Bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-## 4. Train the Model Pipeline
-Run the automated data preparation and model training script:
-```Bash
-python src/train.py
-```
-This script will:
-Verify or generate sample training data in data/raw/.
-Fit a preprocessing and RandomForestRegressor pipeline.
-Print validation metrics (R^2, MAE, RMSE).
-Export the artifact to models/model_pipeline.joblib.
-##5. Launch the Web Application
-```Bash
-streamlit run app/app.py
-```
-The application will open in your browser at http://localhost:8501.
-# 🛠️ Customizing for Your Team Project
-- Replace the Data: Place your CSV/Parquet files in data/raw/ or connect an API scraper in src/.
-- Experiment in Notebooks: Use notebooks/ to clean data, engineer features, and compare models.
-- Automate in src/train.py: Move your best data preparation steps and modeling code from notebooks into a reproducible Python pipeline.
-- Build the UI in app/app.py: Customize input widgets and result visualizations to match your project domain.
+
+
