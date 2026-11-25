@@ -1,0 +1,10 @@
+[NER]
+
+# Całkowicie pomijane: Osoby, Budynki, Kraje/miasta/stany, Obiekty geograficzne, produkty, daty, pory dnia/godziny, procenty, waluty, miary/wagi/odległości, liczebniki
+strict_ignored = ["PERSON", "FAC", "GPE", "LOC", "PRODUCT", "DATE", "TIME", "PERCENT", "MONEY", "QUANTITY", "CARDINAL"]
+# Pomijane warunkowo: organiczacje, wydarzenia, sztuka, akty prawne
+soft_ignored = ["ORG", "EVENT", "WORK_OF_ART", "LAW"]
+
+# Etyiety, które od razu wskazują na konkretny poziom CEFR
+[NER.implies_cefr]
+a2 = ["ORDINAL"]    # Liczebniki porządkowe
