@@ -1,8 +1,10 @@
 import spacy
-
+from pathlib import Path
+import json
 CONTENT_POS = {"NOUN", "VERB", "ADJ", "ADV"}
-
-
+PROJECY_ROOT = Path(__file__).resolve().parents[2]
+DATA_RAW_DIR = PROJECY_ROOT / "data" / "raw"
+FILE = DATA_RAW_DIR / "gotowy_podzial.json"
 def lemmatize_token(token: spacy.tokens.Token, content_pos_only: bool = True) -> tuple[str, str] | None:
     """Sprowadza pojedynczy token spaCy do formy podstawowej (lematu) wraz z częścią mowy.
 
@@ -24,3 +26,15 @@ def lemmatize_token(token: spacy.tokens.Token, content_pos_only: bool = True) ->
         return None
 
     return (lemma, token.pos_)
+
+nlp = spacy.load("en_core_web_sm")
+
+# 2. Przetwórz tekst na obiekt spaCy (Doc)
+tekst = "Fast dogs are running around the green park and barking loudly"
+doc = nlp(tekst)
+
+# 3. Wywołaj funkcję dla każdego tokenu w tekście
+for token in doc:
+    wynik = lemmatize_token(token)
+    if wynik is not None:  # pomijamy słowa funkcyjne (przyimki, spójniki, kropki)
+        print(wynik)
