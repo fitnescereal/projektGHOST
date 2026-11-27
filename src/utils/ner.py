@@ -68,10 +68,3 @@ def get_ner_tokens(doc: spacy.tokens.Doc) -> tuple[list[spacy.tokens.Token], lis
 
     return strict_ner_tokens, soft_ner_tokens, implifies_cefr_tokens
 
-nlp = spacy.load("en_core_web_sm")
-
-a = "22 London dogs with longer hair than Kevin Spacey went to Starbucks ąąą"
-doc = nlp(a)
-b = get_clean_lexical_tokens(doc)
-c = get_ner_tokens(doc)
-print(c)
