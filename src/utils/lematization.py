@@ -1,8 +1,10 @@
 import spacy
-
+from pathlib import Path
+import json
 CONTENT_POS = {"NOUN", "VERB", "ADJ", "ADV"}
-
-
+PROJECY_ROOT = Path(__file__).resolve().parents[2]
+DATA_RAW_DIR = PROJECY_ROOT / "data" / "raw"
+FILE = DATA_RAW_DIR / "gotowy_podzial.json"
 def lemmatize_token(token: spacy.tokens.Token, content_pos_only: bool = True) -> tuple[str, str] | None:
     """Sprowadza pojedynczy token spaCy do formy podstawowej (lematu) wraz z częścią mowy.
 
@@ -24,3 +26,4 @@ def lemmatize_token(token: spacy.tokens.Token, content_pos_only: bool = True) ->
         return None
 
     return (lemma, token.pos_)
+

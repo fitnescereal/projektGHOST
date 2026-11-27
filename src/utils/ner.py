@@ -67,3 +67,4 @@ def get_ner_tokens(doc: spacy.tokens.Doc) -> tuple[list[spacy.tokens.Token], lis
                     break
 
     return strict_ner_tokens, soft_ner_tokens, implifies_cefr_tokens
+
